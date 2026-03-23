@@ -1,0 +1,325 @@
+/* 
+ * Modern UI Overhaul for HookAnywhere
+ * Inspired by modern SaaS dashboard aesthetics
+ */
+
+/* Main Wrapper */
+.hookaw-dashboard-wrap {
+    max-width: 100%;
+    margin: 10px 20px 0 2px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #1f2937;
+}
+
+.hookaw-dashboard-wrap * {
+    box-sizing: border-box;
+}
+
+/* Header */
+.hookaw-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.hookaw-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    color: #111827;
+}
+
+.hookaw-header p {
+    margin: 5px 0 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.hookaw-save-main-btn {
+    background-color: #2563eb !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 24px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    text-shadow: none !important;
+}
+
+.hookaw-save-main-btn:hover {
+    background-color: #1d4ed8 !important;
+}
+
+/* Webhooks Container */
+.hookaw-webhooks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Webhook Card */
+.hookaw-webhook-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    position: relative;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hookaw-webhook-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-color: #d1d5db;
+}
+
+/* Card Header (Remove Button) */
+.hookaw-card-actions {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.hookaw-remove-btn {
+    background: none !important;
+    border: none !important;
+    color: #ef4444 !important;
+    cursor: pointer !important;
+    padding: 4px 8px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    border-radius: 4px !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.hookaw-remove-btn:hover {
+    background-color: #fee2e2 !important;
+}
+
+/* Grid Layout */
+.hookaw-grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.hookaw-grid-3-col {
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    gap: 20px;
+}
+
+.hookaw-grid-repeater {
+    display: grid;
+    grid-template-columns: 1fr 1fr 40px;
+    gap: 20px;
+}
+
+.hookaw-grid-full {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+@media (max-width: 768px) {
+
+    .hookaw-grid-2-col,
+    .hookaw-grid-3-col,
+    .hookaw-grid-repeater {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Input Fields & Labels */
+.hookaw-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hookaw-field-group label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.hookaw-dashboard-wrap input[type="text"],
+.hookaw-dashboard-wrap input[type="email"],
+.hookaw-dashboard-wrap input[type="url"],
+.hookaw-dashboard-wrap input[type="number"],
+.hookaw-dashboard-wrap input[type="password"],
+.hookaw-dashboard-wrap select {
+    width: 100% !important;
+    padding: 0 30px 0 12px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    color: #111827 !important;
+    background-color: #f9fafb !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+    height: 40px !important;
+    margin: 0 !important;
+    line-height: 38px !important; /* Explicit line-height for vertical centering */
+}
+
+.hookaw-dashboard-wrap input[type="text"]:focus,
+.hookaw-dashboard-wrap input[type="email"]:focus,
+.hookaw-dashboard-wrap input[type="url"]:focus,
+.hookaw-dashboard-wrap input[type="number"]:focus,
+.hookaw-dashboard-wrap input[type="password"]:focus,
+.hookaw-dashboard-wrap select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.hookaw-custom-hook-wrap {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Add Button */
+.hookaw-add-btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.hookaw-add-webhook-btn {
+    background-color: #f3f4f6 !important;
+    color: #374151 !important;
+    border: 1px dashed #9ca3af !important;
+    padding: 12px 30px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+.hookaw-add-webhook-btn:hover {
+    background-color: #e5e7eb !important;
+    border-color: #6b7280 !important;
+    color: #111827 !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* WP Notice overrides (to sit nicely above the dashboard) */
+.hookaw-dashboard-wrap+.notice,
+.hookaw-dashboard-wrap~.notice {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Repeater Remove Button */
+.hookaw-remove-row {
+    color: #ef4444 !important;
+    font-size: 20px !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 36px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid #fca5a5 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+.hookaw-remove-row:hover {
+    background-color: #fee2e2 !important;
+    border-color: #ef4444 !important;
+}
+
+/* Modern Outline Button */
+.hookaw-btn-modern-outline:hover {
+    background-color: #f3f4f6 !important;
+    border-color: #9ca3af !important;
+    color: #111827 !important;
+}/* 
+ * HookAnywhere - Admin CSS 
+ * Extracted from inline <style> tags 
+ */
+
+/* --- Extracted from class-hookaw-admin.php --- */
+#adminmenu #menu-posts-hookaw .wp-menu-image img {
+    padding-top: 6px !important;
+    opacity: 0.6; /* Match native unhovered state opacity */
+}
+#adminmenu #menu-posts-hookaw:hover .wp-menu-image img,
+#adminmenu #menu-posts-hookaw.wp-has-current-submenu .wp-menu-image img {
+    opacity: 1; /* Match native hovered/active state opacity */
+}
+
+/* --- Extracted from class-hookaw-cpt.php --- */
+.misc-pub-visibility, .misc-pub-post-status, .misc-pub-curtime, #minor-publishing-actions { display: none !important; }
+/* Disable Meta box dragging and toggles */
+#poststuff .postbox .handle-actions, #poststuff .postbox .handlediv { display: none !important; }
+#poststuff .postbox .hndle { pointer-events: none !important; cursor: default !important; }
+/* Quick Toggle Switch CSS */
+.hookaw-switch { position: relative; display: inline-block; width: 40px; height: 22px; }
+.hookaw-switch input { opacity: 0; width: 0; height: 0; }
+.hookaw-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; }
+.hookaw-slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px; background-color: white; transition: .4s; }
+input:checked + .hookaw-slider { background-color: #2271b1; }
+input:focus + .hookaw-slider { box-shadow: 0 0 1px #2271b1; }
+input:checked + .hookaw-slider:before { transform: translateX(18px); }
+.hookaw-slider.hookaw-round { border-radius: 22px; }
+.hookaw-slider.hookaw-round:before { border-radius: 50%; }
+/* List table specific constraints */
+.column-hookaw_status { width: 150px; text-align: center; white-space: nowrap; }
+/* Align subsubsub filters vertically with search box */
+ul.subsubsub { margin-top: 12px; }
+
+/* Log Screen Additions */
+/* Hide the empty editor placeholder to fix top alignment of normal vs side meta boxes */
+.post-type-hookaw_log #post-body-content { display: none !important; margin-bottom: 0 !important; margin-top: 0 !important; }
+/* Optional tweaks for read-only interface */
+.post-type-hookaw_log #postbox-container-2 .postbox { margin-top: 0; }
+
+/* --- Extracted from views/admin-home.php --- */
+/* Hide all third-party admin notices to keep the dashboard clean */
+.notice,
+.updated,
+.error,
+.update-nag {
+    display: none !important;
+}
+
+/* --- Extracted from views/admin-settings.php --- */
+/* Disable Meta box dragging and toggles on settings page */
+/* Covered by generic #poststuff toggle disable rule above */
