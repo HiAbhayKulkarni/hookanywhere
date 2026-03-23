@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       HookAnywhere - Trigger Any Action, Send Anywhere
  * Description:       HookAnywhere connects WordPress to the outside world by triggering any action hook and sending data to virtually any API or webhook endpoint.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Abhay Kulkarni | abhay.co
  * Author URI:        https://abhay.co
  * Text Domain:       hookanywhere
@@ -20,7 +20,7 @@ if (!defined('WPINC')) {
 /**
  * Current plugin version.
  */
-define('HOOKAW_VERSION', '1.0.0');
+define('HOOKAW_VERSION', '1.0.1');
 define('HOOKAW_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('HOOKAW_PLUGIN_URL', plugin_dir_url(__FILE__));
 

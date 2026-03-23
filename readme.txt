@@ -5,7 +5,7 @@ Tags: webhooks, api, automation, zapier, n8n
 Requires at least: 5.6
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,6 +103,9 @@ HookAnywhere includes an optional newsletter subscription feature during the onb
 No data is sent without the user's explicit consent.
 
 == Changelog ==
+
+= 1.0.1 =
+* Bug Fix: Prevented infinite loop crashes when executing webhooks attached to `save_post` or internal HTTP API hooks.
 
 = 1.0.0 =
 * Initial release of HookAnywhere.

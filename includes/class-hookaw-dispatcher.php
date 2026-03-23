@@ -23,6 +23,13 @@ class HOOKAW_Dispatcher
     private $option_name = 'hookaw_webhooks';
 
     /**
+     * Prevents infinite loops when dispatching webhooks triggers internal actions like save_post.
+     *
+     * @var bool
+     */
+    private static $is_logging = false;
+
+    /**
      * Initialize the dispatcher by reading active webhooks and attaching hooks.
      */
     public function init()
@@ -69,6 +76,13 @@ class HOOKAW_Dispatcher
      */
     public function dispatch_webhook()
     {
+        // Prevent infinite loops triggered by our own internal logging operations
+        if (self::$is_logging) {
+            return;
+        }
+
+        self::$is_logging = true;
+
         $current_filter = current_filter();
         $args = func_get_args();
 
@@ -93,6 +107,7 @@ class HOOKAW_Dispatcher
         $webhook_query = new WP_Query($query_args);
 
         if (!$webhook_query->have_posts()) {
+            self::$is_logging = false;
             return;
         }
 
@@ -209,6 +224,8 @@ class HOOKAW_Dispatcher
             // Log Request
             $this->log_request($post_id, $url, $method, $request_args, $response);
         }
+        
+        self::$is_logging = false;
     }
 
     /**
